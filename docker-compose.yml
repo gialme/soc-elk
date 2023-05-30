@@ -89,7 +89,7 @@ services:
       context: kibana/
       args:
         ELASTIC_VERSION: ${ELASTIC_VERSION}
-    container_name: spc-kibana
+    container_name: soc-kibana
     volumes:
       - ./kibana/config/kibana.yml:/usr/share/kibana/config/kibana.yml:ro,Z
       - ./kibana/dashboards:/usr/share/kibana/dasboards/
@@ -102,3 +102,7 @@ services:
     depends_on:
       - elasticsearch
     restart: unless-stopped
+
+networks:
+  elk:
+    driver: bridge
