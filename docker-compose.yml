@@ -106,3 +106,7 @@ services:
 networks:
   elk:
     driver: bridge
+
+volumes:
+  setup:
+  elasticsearch:
